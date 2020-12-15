@@ -9,12 +9,13 @@ Find out how much buffer is required until we crash the application.
 ```
 usage: fuzz.py [-h] --target TARGET --port PORT [--timout TIMEOUT] [--start-at START_AT] [--increase-by INC_BY] [--halt-before HALT_BEFORE] [--stop-after STOP_AFTER] [--exit-oncrash] [--prefix PREFIX] [--byte-char BYTE_CHAR]
                [--verbose]
+required arguments:
+  --target TARGET, -t TARGET
+                        target to connect to
+  --port PORT, -p PORT  target port
 
 optional arguments:
   -h, --help            show this help message and exit
-  --target TARGET, -t TARGET
-                        target
-  --port PORT, -p PORT  target port
   --timout TIMEOUT, -T TIMEOUT
                         adjust timeout (default: 5)
   --start-at START_AT, -b START_AT
