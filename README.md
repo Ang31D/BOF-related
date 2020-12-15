@@ -50,6 +50,20 @@ python3 ./fuzz.py -t $(cat target.ip) -p 1337 -P "OVERFLOW10 "
 [+] Crash after sending '1000' bytes
 Restart server and enter <action> (help):
   ```
+* What internal commands can we do?
+```
+Restart server and enter <action> (help): help
+[#] help, info, q(uit), c(ontinue)
+[#] pattern <length>, offset <pattern>
+[#] set <option> <value>
+[#] * options
+[#]   inc(rement) <number>, (b)ytes <number>
+[#]   stack offset <size>, buffer size <size>
+[#]   halt at <size>, step <on/off>
+[#] * Phases: #1 crash, #2 pattern, #3 offset,
+[#]           #4 stack offset & buffer size
+Restart server and enter <action> (help): 
+```
 * Check current settings
 ```
 Restart server and enter <action> (help): info
@@ -59,17 +73,19 @@ Restart server and enter <action> (help): info
 [*] halt at buffer: 0 (bytes), step on halt: On
 Restart server and enter <action> (help): 
 ```
-* What internal commands can we do
+* Rerun with increment of 100 bytes
 ```
-Restart server and enter <action> (help): help
-[#] help, q(uit), c(continue)
-[#] pattern <length>, offset <pattern>
-[#] info, set <option> <value>
-[#] * options
-[#]   inc(rement) <number>, bytes <number>
-[#]   stack offset <size>, buffer size <size>
-[#]   halt at <size>, step <on/off>
-[#] * Phases: #1 crash, #2 pattern, #3 offset,
-[#]           #4 stack offset & buffer size
+Restart server and enter <action> (help): set b 0
+[*] Set 'bytes' at 0
+Restart server and enter <action> (help): set inc 100
+[*] Set 'increment' by 100
+Restart server and enter <action> (help): c
+[*] Sending buffer of 100 bytes
+[*] Sending buffer of 200 bytes
+[*] Sending buffer of 300 bytes
+[*] Sending buffer of 400 bytes
+[*] Sending buffer of 500 bytes
+[*] Sending buffer of 600 bytes
+[+] Crash after sending '600' bytes
 Restart server and enter <action> (help): 
 ```
