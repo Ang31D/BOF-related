@@ -35,11 +35,8 @@ optional arguments:
   ## Examples
   ### Crash the application
   ```
-  python3 ./fuzz.py -t $(cat target.ip) -p 1337 -P "OVERFLOW10 "
-  ```
-  * Output
-  ```
-    [*] Fuzzing - target: 10.10.251.195, port: 1337, timeout: 5s
+python3 ./fuzz.py -t $(cat target.ip) -p 1337 -P "OVERFLOW10 "
+[*] Fuzzing - target: 10.10.251.195, port: 1337, timeout: 5s
 [*] Config - prefix 'OVERFLOW10 ', start at: 0, increment by: 500, char: 'A'
 [*] Debug - verbose: Off, halt at: 0, step on halt: On
 [#] Phases: #1 crash, #2 pattern, #3 offset
@@ -53,3 +50,12 @@ optional arguments:
 [+] Crash after sending '1000' bytes
 Restart server and enter <action> (help):
   ```
+* Check current settings
+```
+Restart server and enter <action> (help): info
+[*] target: 10.10.251.195, port: 1337, timeout: 5s
+[*] prefix 'OVERFLOW10 ', bytes: 1000, increment: 500, char: 'A'
+[*] stack offset: 0, buffer size: 0
+[*] halt at buffer: 0 (bytes), step on halt: On
+Restart server and enter <action> (help): 
+```
