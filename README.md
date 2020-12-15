@@ -59,3 +59,17 @@ Restart server and enter <action> (help): info
 [*] halt at buffer: 0 (bytes), step on halt: On
 Restart server and enter <action> (help): 
 ```
+* What internal commands can we do
+```
+Restart server and enter <action> (help): help
+[#] help, q(uit), c(continue)
+[#] pattern <length>, offset <pattern>
+[#] info, set <option> <value>
+[#] * options
+[#]   inc(rement) <number>, bytes <number>
+[#]   stack offset <size>, buffer size <size>
+[#]   halt at <size>, step <on/off>
+[#] * Phases: #1 crash, #2 pattern, #3 offset,
+[#]           #4 stack offset & buffer size
+Restart server and enter <action> (help): 
+```
