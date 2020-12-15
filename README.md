@@ -2,7 +2,7 @@
 Related tools to help out with Buffer Overflow.
 
 ## fuzz.py
-Find out how much buffer is required to fill to crash the application.
+Find out how much buffer is required until we crash the application.
 
 
 * Usage
