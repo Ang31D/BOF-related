@@ -23,9 +23,9 @@ optional arguments:
   --increase-by INC_BY, -i INC_BY
                         increase buffer size by (default: 500)
   --halt-before HALT_BEFORE, -H HALT_BEFORE
-                        halt before buffer size
+                        halt before sending buffer size
   --stop-after STOP_AFTER, -S STOP_AFTER
-                        stop after buffer size
+                        stop after sending buffer size
   --exit-oncrash, -E    exit after crash
   --prefix PREFIX, -P PREFIX
                         prefix before buffer
