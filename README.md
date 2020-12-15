@@ -89,3 +89,10 @@ Restart server and enter <action> (help): c
 [+] Crash after sending '600' bytes
 Restart server and enter <action> (help): 
 ```
+
+```
+Restart server and enter <action> (help): pattern 10000
+[*] Sending cyclic pattern of 10000 bytes
+[+] Crash after sending '10000' bytes
+Restart server and enter <action> (help): 
+```
